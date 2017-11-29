@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block body %}
+  <body id=body>
+    <form method="POST">
+      {% csrf_token %}
+      <div class="fieldWrapper">
+        {{ form.nombre.label_tag }}
+        {{ form.nombre }}
+      </div>
+      <div class="fieldWrapper">
+        {{ form.edad.label_tag }}
+        {{ form.edad }}
+      </div>
+      <div class="fieldWrapper">
+        {{ form.instrumento.label_tag }}
+        {{ form.instrumento }}
+      </div>
+      <div class="fieldWrapper">
+        {{ form.concursosGanados.label_tag }}
+        {{ form.concursosGanados }}
+      </div>
+      </div>
+        <input type="submit" class="btn btn-primary btn-lg btn-block" name="register" value="Subir">
+      </div>
+    </form>
+  </body>
+{% endblock %}

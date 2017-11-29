@@ -1,0 +1,11 @@
+<!-- Práctica 5: Plantilla Base -->
+{% extends 'base.html' %}
+{% block body %}
+<body id=body>
+  <form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" class="btn btn-primary btn-lg btn-block" name="register" value="Registrarse">
+  </form>
+</body>
+{% endblock %}

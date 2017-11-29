@@ -1,0 +1,18 @@
+<!-- Práctica 5: Plantilla Base -->
+{% extends "base.html" %}
+{% block body %}
+<body id=body>
+  <!-- Práctica 7: Managers -->
+  {% for p in practicas %}
+  {% if p.realizado == True %}
+  <div>
+    <h3>Practica {{ p.practica }}.- {{ p.nombre }}, Realizada</h3>
+  </div>
+  {% else %}
+  <div>
+    <h3>Practica {{ p.practica }}.- {{ p.nombre }}, Sin realizar</h3>
+  </div>
+  {% endif %}
+  {% endfor %}
+</body>
+{% endblock %}

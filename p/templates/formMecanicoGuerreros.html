@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block body %}
+  <body id=body>
+    <form method="POST">
+      {% csrf_token %}
+      <div class="fieldWrapper">
+        {{ form.nombre.label_tag }}
+        {{ form.nombre }}
+      </div>
+      <div class="fieldWrapper">
+        {{ form.raza.label_tag }}
+        {{ form.raza }}
+      </div>
+      <div class="fieldWrapper">
+        {{ form.nivelKi.label_tag }}
+        {{ form.nivelKi }}
+      </div>
+      <div class="fieldWrapper">
+        {{ form.transformacionMasPoderosa.label_tag }}
+        {{ form.transformacionMasPoderosa }}
+      </div>
+      <div class="fieldWrapper">
+        {{ form.habilidadEspecial.label_tag }}
+        {{ form.habilidadEspecial }}
+      </div>
+      <div class="fieldWrapper">
+        {{ form.planetaOrigen.label_tag }}
+        {{ form.planetaOrigen }}
+      </div>
+      <div class="fieldWrapper">
+        {{ form.universo.label_tag }}
+        {{ form.universo }}
+      </div>
+      </div>
+        <input type="submit" class="btn btn-primary btn-lg btn-block" name="register" value="Subir">
+      </div>
+    </form>
+  </body>
+{% endblock %}

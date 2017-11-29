@@ -1,0 +1,19 @@
+<!-- Práctica 4: Vistas -->
+<!-- Práctica 5: Plantilla Base -->
+{% extends "base.html" %}
+{% block body %}
+  <body id=body>
+    <!-- Práctica 9: Vistas basadas en clases -->
+    {% for g in object_list %}
+    <div>
+      <h1>{{ g.nombre }}</h1>
+      <h3>Raza: {{ g.raza }}</h3>
+      <h4>Ki: {{ g.nivelKi }}</h4>
+      <h4>Transformacion más poderosa: {{ g.transformacionMasPoderosa }}</h4>
+      <h4>Habildiad especial: {{ g.habilidadEspecial }}</h4>
+      <h4>Planeta de origen: {{ g.planetaOrigen }}</h4>
+      <h4>Universo: {{ g.universo }}</h4>
+    </div>
+    {% endfor %}
+  </body>
+{% endblock %}

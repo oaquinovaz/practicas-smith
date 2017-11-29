@@ -1,0 +1,16 @@
+<!-- Práctica 4: Vistas -->
+<!-- Práctica 5: Plantilla Base -->
+{% extends "base.html" %}
+{% block body %}
+  <body id=body>
+    <!-- Práctica 9: Vistas basadas en clases -->
+    {% for m in object_list %}
+    <div>
+      <h1>{{ m.nombre }}</h1>
+      <h3>Edad: {{ m.edad }}</h3>
+      <h4>Instrumento: {{ m.instrumento }}</h4>
+      <h4>Concursos ganados: {{ m.concursosGanados }}</h4>
+    </div>
+    {% endfor %}
+  </body>
+{% endblock %}

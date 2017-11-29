@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block body %}
+  <body id=body>
+    <form method="POST">
+      {% csrf_token %}
+      <div class="fieldWrapper">
+        {{ form.nombre.label_tag }}
+        {{ form.nombre }}
+      </div>
+      <div class="fieldWrapper">
+        {{ form.clan.label_tag }}
+        {{ form.clan }}
+      </div>
+      <div class="fieldWrapper">
+        {{ form.aldea.label_tag }}
+        {{ form.aldea }}
+      </div>
+      <div class="fieldWrapper">
+        {{ form.nivelMilitar.label_tag }}
+        {{ form.nivelMilitar }}
+      </div>
+      <div class="fieldWrapper">
+        {{ form.jutsu.label_tag }}
+        {{ form.jutsu }}
+      </div>
+      <div class="fieldWrapper">
+        {{ form.nivelChakra.label_tag }}
+        {{ form.nivelChakra }}
+      </div>
+      </div>
+        <input type="submit" class="btn btn-primary btn-lg btn-block" name="register" value="Subir">
+      </div>
+    </form>
+  </body>
+{% endblock %}

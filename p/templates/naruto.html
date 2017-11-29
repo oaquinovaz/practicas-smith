@@ -1,0 +1,17 @@
+<!-- Práctica 4: Vistas -->
+<!-- Práctica 5: Plantilla Base -->
+{% extends "base.html" %}
+{% block body %}
+<body id=body>
+  <!-- Práctica 7: Managers -->
+  {% for n in ninjas %}
+  <div>
+    <h1>{{ n.clan }} {{ n.nombre }}</h1>
+    <h3>Aldea: {{ n.aldea }}</h3>
+    <h4>Rango: {{ n.nivelMilitar }}</h4>
+    <h4>Jutsu: {{ n.jutsu }}</h4>
+    <h4>Chakra: {{ n.nivelChakra }}</h4>
+  </div>
+  {% endfor %}
+</body>
+{% endblock %}

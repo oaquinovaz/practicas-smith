@@ -1,0 +1,135 @@
+<!-- Práctica 5: Plantilla Base -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Práctica 13: Bootstrap de manera estatica -->
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'bootstrap-4/dropdown/bootstrap-theme.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'bootstrap-4/dropdown/bootstrap.min.css' %}"/>
+    <script src="{% static 'bootstrap-4/dropdown/jquery.min.js' %}"></script>
+    <script src="{% static 'bootstrap-4/dropdown/bootstrap.min.js' %}"/></script>
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+      body {
+        position: relative;
+      }
+      #main_nav {padding-top:0px;height:50px;color: #fff; background-color: #000000;}
+      #dropdown{color: #fff; background-color: #000000;}
+      #nav_inputs{padding-left:10px;padding-top:15px}
+      #input{height:30px;width:150px}
+      #nav_botones{padding-left:10px;padding-top:15px}
+      #botones{height:30px}
+      #body {padding-top:60px;height:500px;color: #000000; background-color: #ffffff;}
+    </style>
+  </head>
+  <header>
+    <nav class="nabar navbar-default navbar-fixed-top">
+      <div id="main_nav" class="container-fluid">
+        <div class="navbar-header">
+          <a href="/index/">
+            <!-- Práctica 14: Cargararchivos estaticos -->
+            <img src="/static/imagenes/django_logo.png" width="100" height="50" align="left"></img>
+          </a>
+          <a class="navbar-brand"></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="/anime/">Animes</a><li>
+          <li><a href="/naruto/">Naruto</a><li>
+          <li><a href="/snk/">SNK</a><li>
+          <li><a href="/dbs/">DBS</a><li>
+          <li><a href="/swknu/">SWKNU</a><li>
+          <li><a href="/accounts/facebook/login/">Facebook</a><li>
+        </ul>
+        <!-- Práctica 8: Formularios -->
+        <ul class="nav navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="" aria-haspopup="true" aria-expanded="false">Formularios
+              <div id="dropdown" class="dropdown-menu">
+                <div>
+                  <a class="dropdown-item" href="/formPracticas/">Prácticas</a>
+                </div>
+                <div>
+                  <a class="dropdown-item" href="/formAnimes/">Animes</a>
+                </div>
+                <div>
+                  <a class="dropdown-item" href="/formNaruto/">Naruto</a>
+                </div>
+                <div>
+                  <a class="dropdown-item" href="/formSNK/">Shingeki no Kyojin</a>
+                </div>
+                <div>
+                  <a class="dropdown-item" href="/formDBS/">Dragon Ball Super</a>
+                </div>
+                <div>
+                  <a class="dropdown-item" href="/formSWKNU/">Shigatsu wa kimi no uso</a>
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <!-- Práctica 9: Vistas basadas en clases -->
+        <ul class="nav navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="" aria-haspopup="true" aria-expanded="false">Clases
+              <div id="dropdown" class="dropdown-menu">
+                <div>
+                  <a class="dropdown-item" href="/animes_list/">Animes</a>
+                </div>
+                <div>
+                  <a class="dropdown-item" href="/ninjas_list/">Naruto</a>
+                </div>
+                <div>
+                  <a class="dropdown-item" href="/soldados_list/">Shingeki no Kyojin</a>
+                </div>
+                <div>
+                  <a class="dropdown-item" href="/guerreros_list/">Dragon Ball Super</a>
+                </div>
+                <div>
+                  <a class="dropdown-item" href="/musicos_list/">Shigatsu wa kimi no uso</a>
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <!-- Práctica 10: Formularios mecanicos -->
+        <ul class="nav navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="" aria-haspopup="true" aria-expanded="false">Mecanicos
+              <div id="dropdown" class="dropdown-menu">
+                <div>
+                  <a class="dropdown-item" href="/formMecanicoAnimes/">Animes</a>
+                </div>
+                <div>
+                  <a class="dropdown-item" href="/formMecanicoNinjas/">Naruto</a>
+                </div>
+                <div>
+                  <a class="dropdown-item" href="/formMecanicoSoldados/">Shingeki no Kyojin</a>
+                </div>
+                <div>
+                  <a class="dropdown-item" href="/formMecanicoDBS/">Dragon Ball Super</a>
+                </div>
+                <div>
+                  <a class="dropdown-item" href="/formMecanicoSWKNU/">Shigatsu wa kimi no uso</a>
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <!-- Páctica 11: Login -->
+        {% if not request.user.is_authenticated %}
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/login/">Iniciar Sesión</a></li>
+            <!-- Páctica 12: SignUp -->
+            <li><a href="/signup/">Registrarse</a></li>
+          </ul>
+        {% else %}
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/logout/">Cerrar Sesión</a></li>
+        </ul>
+        {% endif %}
+      </div>
+    </nav>
+  </header>
+  {% block body %}
+  {% endblock %}
+</html>

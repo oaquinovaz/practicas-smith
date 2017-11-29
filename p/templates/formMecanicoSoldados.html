@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block body %}
+  <body id=body>
+    <form method="POST">
+      {% csrf_token %}
+      <div class="fieldWrapper">
+        {{ form.nombre.label_tag }}
+        {{ form.nombre }}
+      </div>
+      <div class="fieldWrapper">
+        {{ form.distrito.label_tag }}
+        {{ form.distrito }}
+      </div>
+      <div class="fieldWrapper">
+        {{ form.muralla.label_tag }}
+        {{ form.muralla }}
+      </div>
+      <div class="fieldWrapper">
+        {{ form.ejercito.label_tag }}
+        {{ form.ejercito }}
+      </div>
+      <div class="fieldWrapper">
+        {{ form.gigantesAsesinados.label_tag }}
+        {{ form.gigantesAsesinados }}
+      </div>
+      </div>
+        <input type="submit" class="btn btn-primary btn-lg btn-block" name="register" value="Subir">
+      </div>
+    </form>
+  </body>
+{% endblock %}
